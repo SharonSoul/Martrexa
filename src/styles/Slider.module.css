@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+img {
+  user-select: none;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+}
+
+a {
+  display: inline-block;
+}
+
+.headingStyle2 {
+  color: #FFF;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 50px;
+  margin-bottom: 40px;
+}
+
+p {
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
+  margin-bottom: 28px;
+}
+
+.logo a {
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 271px;
+  height: auto;
+}
+
+.sliderMain {
+  min-height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: background 1s ease; /* Smooth background transition */
+}
+
+.textContainer {
+  width: 50%;
+  padding-block: 100px;
+  max-width: 525px;
+}
+
+.sliderContentWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.socialIcons a {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialIcons img {
+  width: 22px;
+  height: 22px;
+}
+
+.sliderImages {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden; /* Ensure images stay within bounds */
+}
+
+.sliderImage {
+  position: absolute;
+  top: 50%;
+  right: -100%; /* Start off-screen on the right */
+  transform: translateY(-50%) scale(0.3);
+  opacity: 0;
+  animation: slideInOut 6s ease-in-out infinite; /* Adjust timing to sync with intervalDuration */
+}
+
+@keyframes slideInOut {
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+  10% {
+    right: 0;
+    opacity: 1;
+  }
+  50% {
+    right: 0;
+    opacity: 1;
+  }
+  80% {
+    right: 100%;
+    opacity: 0;
+  }
+  100% {
+    right: 100%;
+    opacity: 0;
+  }
+}

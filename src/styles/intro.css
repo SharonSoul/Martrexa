@@ -1,8 +1,6 @@
-/* author: Paul Roger
-https://codepen.io/Tiopayo/pen/KKGVWWz */
-@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Anton&family=Bebas+Neue&family=Jost:ital,wght@1,600&family=Lexend:wght@700&family=Nova+Oval&family=Oswald:wght@500&family=PT+Serif:wght@700&family=Titillium+Web&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap");
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+
 
 * {
     -webkit-font-smoothing: antialiased;
@@ -12,11 +10,7 @@ https://codepen.io/Tiopayo/pen/KKGVWWz */
 
 :root {
     --font1: "Poppins";
-    --fontSizeMenu: 1vw;
-    --fontSizeH1: 19vw;
     --fontSizeIntro: 3vw;
-    --fontSizeP: 1.48vw;
-    --maxWidth: 1100px;
 }
 
 body {
@@ -25,68 +19,31 @@ body {
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
-    width: 100%;
 }
 
-.flex,
-.flex__col {
+.flex, .flex__col {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hero_new {
+    
 }
 
 .flex__col {
     flex-direction: column;
 }
 
-.hero_new {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-main.flex__col {
-    width: 100%;
-    justify-content: flex-start;
-}
-
 .menu {
     position: fixed;
-    z-index: 3;
+    z-index: 999;
     top: 0;
     left: 50%;
-    width: 100%;
+    width: calc(100% - 80px);
     justify-content: space-between;
     margin: 40px 0;
-    transform: translatex(-50%);
-}
-
-.menu a {
-    font-size: var(--fontSizeMenu);
-    font-weight: 600;
-    color: var(--dark);
-    text-decoration: none;
-}
-
-.menu__right {
-    width: 50px;
-    height: 50px;
-    gap: 5px;
-    background-color: #fff;
-    border-radius: 100%;
-}
-
-.menu__right div {
-    width: 50%;
-    height: 2px;
-    background-color: #111;
+    transform: translateX(-50%);
 }
 
 .intro {
@@ -127,7 +84,7 @@ main.flex__col {
 
 .clip {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -136,153 +93,22 @@ main.flex__col {
     height: 90vh;
 }
 
-.clip h1,
-.clip .h1__stroke {
+.clip h1 {
     position: absolute;
-    z-index: 1;
     top: 50%;
     left: 50%;
-    width: 100%;
     font-family: "Bebas Neue";
-    font-size: var(--fontSizeH1);
-    font-weight: 400;
-    text-align: center;
+    font-size: 19vw;
     text-transform: uppercase;
     letter-spacing: -0.75vw;
     line-height: 80%;
     margin: 0;
-    overflow: hidden;
     transform: translate(-50%, -50%) scaleY(2);
 }
 
-.clip h1 span,
-.clip .h1__stroke span {
-    display: inline-block;
-}
-
-.clip .h1__stroke {
+.h1__stroke {
+    position: absolute;
     z-index: 3;
     color: transparent;
     -webkit-text-stroke: 1px #fff;
 }
-
-.clip p {
-    position: absolute;
-    z-index: 3;
-    bottom: 20px;
-    left: 50%;
-    width: 50vw;
-    font-size: var(--fontSizeP);
-    text-align: center;
-    transform: translateX(-50%);
-}
-
-.clip p a {
-    color: #fff;
-}
-
-.clip figure {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    width: 40vw;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    aspect-ratio: 1/1;
-    transform: translate(-60%, -50%) scaleX(-1);
-    clip-path: url(#svgClipPath);
-}
-
-.clip figure video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-}
-
-.clip__bg {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 3vw;
-    overflow: hidden;
-}
-
-.cursor {
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 6vw;
-    height: auto;
-    aspect-ratio: 10/4;
-    color: #000;
-    font-family: "Anton";
-    font-size: 1.5vw;
-    pointer-events: none;
-    transform: translate(-50%, -50%) scale(0);
-}
-
-.cursor::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f21010;
-    border-radius: 100%;
-    transform: rotate(-15deg);
-}
-
-.noise {
-    position: fixed;
-    z-index: 1001;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    background-image: url("https://www.paulrogerdev.fr/codepen/noise.png");
-}
-
-@media (min-width: 1550px) {
-    :root {
-        --fontSizeMenu: 16px;
-        --fontSizeP: 16px;
-    }
-}
-
-@media (max-width: 1000px) {
-    .intro__red div {
-        transform: scaleY(4);
-    }
-}
-
-@media (max-width: 600px) {
-    :root {
-        --fontSizeMenu: 11px;
-        --fontSizeP: 11px;
-    }
-
-    .menu {
-        width: 100vw;
-        margin: 0 0;
-    }
-
-    .menu ul {
-        gap: 0 2vw;
-    }
-}
-
-/* Icons */

@@ -3,6 +3,8 @@ https://codepen.io/hosea-s/pen/XaOazb */
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,300,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css);
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+
 /*!
 
  =========================================================
@@ -12,7 +14,7 @@ https://codepen.io/hosea-s/pen/XaOazb */
  * Product Page: http://www.creative-tim.com/product/paper-kit-2
  * Copyright 2017 Creative Tim (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/timcreative/paper-kit/blob/master/LICENSE.md)
-
+ 
  =========================================================
 
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -412,6 +414,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     background-color: transparent !important;
     border-bottom: 1px solid transparent;
 }
+
 
 .btn {
     box-sizing: border-box;
@@ -1693,6 +1696,7 @@ textarea.form-control {
 }
 .container .alert {
     border-radius: 4px;
+    display: block;
 }
 .navbar .alert {
     border-radius: 0;
@@ -2468,8 +2472,19 @@ textarea.form-control {
     border-radius: 12px;
     margin-top: 1px;
 }
+.navbar-collapse {
+    background-color: white;
+    z-index: 99999; /* or any desired color */
+}
+
+.navbar-collapse .nav-link, .navbar-collapse .btn {
+    color: black; /* Ensure the text is visible */
+    z-index: 99999
+}
 .navbar .navbar-collapse .nav-item .nav-link p {
+    background-color: white; /* or any desired color */
     display: inline;
+    z-index: 99999
 }
 .navbar .navbar-collapse .nav-item .dropdown-item i {
     margin: 0 10px;
@@ -2477,26 +2492,32 @@ textarea.form-control {
     font-size: 18px;
     position: relative;
     top: 3px;
+    z-index: 99999
 }
 .navbar .navbar-collapse.show .navbar-nav .nav-item {
     padding-right: 10px;
+    z-index: 99999
 }
 .navbar .notification-bubble {
     right: 72px;
     padding: 0.2em 0.6em;
     position: absolute;
     top: 15px;
+    z-index: 99999
 }
 .navbar .btn {
     margin: 15px 3px;
     font-size: 12px;
+    z-index: 99999
 }
 .navbar .btn i {
     font-size: 14px;
     line-height: 13px;
+    z-index: 99999
 }
 .navbar .btn-simple {
     font-size: 16px;
+    z-index: 99999
 }
 .navbar .caret {
     left: 0;
@@ -2735,6 +2756,7 @@ textarea.form-control {
 
 .collapse .navbar-text {
     line-height: 55px;
+    z-index: 99999
 }
 
 .navbar-default .navbar-brand {
@@ -2856,6 +2878,7 @@ textarea.form-control {
 
 .burger-menu .collapse .navbar-nav a {
     color: #333333;
+    z-index: 99999
 }
 
 .navbar-transparent {
@@ -6197,6 +6220,7 @@ textarea.form-control {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/antoine-barres.jpg')
 }
 .page-header .filter::after {
     background-color: rgba(0, 0, 0, 0.5);
@@ -6443,6 +6467,7 @@ textarea.form-control {
     height: 43.75em;
     -webkit-animation: cloudLoop 80s linear infinite;
     animation: cloudLoop 80s linear infinite;
+    background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png'); 
 }
 
 @keyframes cloudLoop {

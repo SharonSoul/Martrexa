@@ -1,11 +1,18 @@
 import { useState } from 'react'
 import './App.css'
-import HeroNav from './components/HeroNav'
+import HeroNavi from './components/HeroNavi'
+import Slider from './components/Slider'
+
+
 
 function App() {
 
   return (
-    <HeroNav />
+    <div>
+      <HeroNavi />
+      <Slider />
+
+    </div>
   )
 }
 
